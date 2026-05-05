@@ -1,0 +1,91 @@
+{
+  "pages": {
+    "/_not-found": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/_not-found-352713f74bf9de0e.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/250-e3db70cd67721be2.js",
+      "static/css/8b49790462640ab8.css",
+      "static/chunks/app/layout-30da8fac54dc9d81.js"
+    ],
+    "/admin/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/admin/page-0883478e6dee0f40.js"
+    ],
+    "/anime/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/anime/page-fa5bece2660f2593.js"
+    ],
+    "/categories/[category]/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/categories/[category]/page-da26e7f4b0e8f7bc.js"
+    ],
+    "/entries/[id]/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/entries/[id]/page-01bfd8f5d55d2013.js"
+    ],
+    "/manga/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/manga/page-0b1db92d17837dc1.js"
+    ],
+    "/movies/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/movies/page-31eca81b25e1aa15.js"
+    ],
+    "/novels/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/novels/page-e6eee0b5cb36e3ed.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/250-e3db70cd67721be2.js",
+      "static/chunks/app/page-16bc51d6c612326a.js"
+    ],
+    "/series/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/series/page-6f4aa5239eba32cf.js"
+    ],
+    "/users/[id]/page": [
+      "static/chunks/webpack-90aa1ea73905e676.js",
+      "static/chunks/fd9d1056-516b58327fb05db5.js",
+      "static/chunks/938-f464a3b2301c5ba9.js",
+      "static/chunks/main-app-34d8ac21c07728a9.js",
+      "static/chunks/app/users/[id]/page-97d57aef25002d80.js"
+    ]
+  }
+}

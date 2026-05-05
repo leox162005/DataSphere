@@ -1,0 +1,202 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  OWNER
+  DATABASE_ADMIN
+  DATABASE_ADDER
+  DATABASE_ENTRY_MODERATOR
+  COMMUNITY_ADMIN
+  COMMUNITY_MODERATOR
+  COMMENT_ADMIN
+  COMMENT_MODERATOR
+  USER
+}
+
+enum EntryType {
+  ANIME
+  MOVIE
+  SERIES
+  MANGA
+  NOVEL
+}
+
+enum EntryStatus {
+  ONGOING
+  COMPLETED
+  UPCOMING
+}
+
+enum TrackingStatus {
+  WATCHING
+  READING
+  ON_HOLD
+  COMPLETED
+  DROPPED
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  image     String?
+  roles     Role[]
+  accounts  Account[]
+  sessions  Session[]
+  ratings   Rating[]
+  comments  Comment[]
+  tracking  Tracking[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Entry {
+  id             String       @id @default(cuid())
+  title          String
+  type           EntryType
+  status         EntryStatus
+  description    String?
+  genres         String[]     // Array of genres
+  tags           String[]     // Array of tags
+  averageRating  Float?       @default(0)
+  totalEpisodes  Int?
+  duration       String?      // e.g., "24 min" or "2h 30m"
+  studio         String?
+  language       String?
+  country        String?
+  releaseDate    DateTime?
+  posterImage    String?
+  characters     Character[]
+  staff          Staff[]
+  seasons        Season[]
+  relatedTitles  RelatedTitle[]
+  ratings        Rating[]
+  comments       Comment[]
+  tracking       Tracking[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Character {
+  id       String @id @default(cuid())
+  name     String
+  role     String?
+  image    String?
+  entryId  String
+  entry    Entry  @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  voiceActors VoiceActor[]
+}
+
+model VoiceActor {
+  id          String    @id @default(cuid())
+  name        String
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+}
+
+model Staff {
+  id      String @id @default(cuid())
+  name    String
+  role    String // e.g., Director, Writer
+  entryId String
+  entry   Entry  @relation(fields: [entryId], references: [id], onDelete: Cascade)
+}
+
+model Season {
+  id       String @id @default(cuid())
+  number   Int
+  title    String?
+  entryId  String
+  entry    Entry  @relation(fields: [entryId], references: [id], onDelete: Cascade)
+}
+
+model RelatedTitle {
+  id          String @id @default(cuid())
+  title       String
+  relation    String // e.g., Prequel, Sequel, Spin-off
+  relatedId   String?
+  entryId     String
+  entry       Entry  @relation(fields: [entryId], references: [id], onDelete: Cascade)
+}
+
+model Rating {
+  id       String @id @default(cuid())
+  value    Int    // 1-10
+  userId   String
+  entryId  String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  entry    Entry  @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, entryId])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  userId    String
+  entryId   String
+  parentId  String?  // For nested comments
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  entry     Entry    @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  replies   Comment[] @relation("CommentReplies")
+  parent    Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Tracking {
+  id             String         @id @default(cuid())
+  status         TrackingStatus
+  progress       Int?           // e.g., episodes watched, chapters read
+  timestamp      DateTime?      // For progress tracking
+  userId         String
+  entryId        String
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  entry          Entry          @relation(fields: [entryId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, entryId])
+}
