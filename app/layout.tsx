@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className="dark">
+      <body className={inter.className + " bg-slate-900 text-slate-100"}>
         <Navigation />
-        <main className="min-h-screen bg-gradient-to-br from-primary-50 to-primary-200">
+        <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           {children}
         </main>
         <Footer />

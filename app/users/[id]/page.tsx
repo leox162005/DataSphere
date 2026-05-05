@@ -30,21 +30,43 @@ export default function UserProfilePage() {
       })
   }, [id])
 
-  if (loading) return <div className="container mx-auto p-8">Loading profile...</div>
-  if (!user) return <div className="container mx-auto p-8">User profile not found.</div>
+  if (loading) return <div className="container mx-auto p-8 flex items-center justify-center min-h-screen">
+    <div className="text-primary-400 text-xl">Loading profile...</div>
+  </div>
+  if (!user) return <div className="container mx-auto p-8 flex items-center justify-center min-h-screen">
+    <div className="text-center">
+      <div className="text-6xl mb-4">👤</div>
+      <h2 className="text-2xl font-bold text-slate-300 mb-2">User not found</h2>
+      <p className="text-slate-500">The user profile you&apos;re looking for doesn&apos;t exist.</p>
+    </div>
+  </div>
 
   return (
     <div className="container mx-auto p-8">
-      <div className="glass p-6 rounded-xl">
-        <div className="flex flex-col md:flex-row gap-6 items-center">
-          <div className="w-32 h-32 bg-primary-50 rounded-full flex items-center justify-center text-primary-300 text-4xl">
-            {user.name?.charAt(0) || 'U'}
+      <div className="glass p-8 rounded-xl bg-slate-800/50 border border-slate-700">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+            {user.name?.charAt(0).toUpperCase() || 'U'}
           </div>
-          <div>
-            <h1 className="text-3xl font-bold text-primary-300">{user.name || 'User'}</h1>
-            <p className="text-primary-200">Roles: {user.roles.join(', ')}</p>
-            <p className="text-primary-200">Ratings: {user._count.ratings}</p>
-            <p className="text-primary-200">Comments: {user._count.comments}</p>
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl font-bold text-primary-300 mb-2">{user.name || 'Anonymous User'}</h1>
+            <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
+              {user.roles.map(role => (
+                <span key={role} className="px-3 py-1 bg-accent-500/20 text-accent-300 rounded-full text-sm font-medium">
+                  {role}
+                </span>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-4 text-center md:text-left">
+              <div className="glass p-4 rounded-lg bg-slate-800/30">
+                <div className="text-2xl font-bold text-primary-400">{user._count.ratings}</div>
+                <div className="text-slate-400">Ratings</div>
+              </div>
+              <div className="glass p-4 rounded-lg bg-slate-800/30">
+                <div className="text-2xl font-bold text-primary-400">{user._count.comments}</div>
+                <div className="text-slate-400">Comments</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

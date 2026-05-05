@@ -3,26 +3,35 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className="container mx-auto p-8">
-      <section>
-        <h2 className="text-4xl font-bold text-center text-primary-300 mb-8">Welcome to DataSphere</h2>
-        <p className="text-center text-primary-200 mb-8">Your ultimate database for anime, movies, series, manga, and novels.</p>
+      <section className="text-center mb-12">
+        <h2 className="text-5xl font-bold text-primary-400 mb-6 bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+          Welcome to DataSphere
+        </h2>
+        <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+          Your ultimate database for anime, movies, series, manga, and novels. Discover, track, and share your favorite content.
+        </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        <Link href="/categories/anime" className="glass p-6 rounded-lg text-center hover:bg-opacity-30 transition">
-          <h3 className="text-xl font-semibold text-primary-300">Anime</h3>
+      <section className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <Link href="/categories/anime" className="group glass p-6 rounded-xl text-center hover:bg-slate-800/50 transition-all duration-300 hover:scale-105 border border-slate-700 hover:border-primary-500">
+          <div className="text-4xl mb-3">🎬</div>
+          <h3 className="text-xl font-semibold text-primary-300 group-hover:text-primary-200">Anime</h3>
         </Link>
-        <Link href="/categories/movies" className="glass p-6 rounded-lg text-center hover:bg-opacity-30 transition">
-          <h3 className="text-xl font-semibold text-primary-300">Movies</h3>
+        <Link href="/categories/movies" className="group glass p-6 rounded-xl text-center hover:bg-slate-800/50 transition-all duration-300 hover:scale-105 border border-slate-700 hover:border-primary-500">
+          <div className="text-4xl mb-3">🎥</div>
+          <h3 className="text-xl font-semibold text-primary-300 group-hover:text-primary-200">Movies</h3>
         </Link>
-        <Link href="/categories/series" className="glass p-6 rounded-lg text-center hover:bg-opacity-30 transition">
-          <h3 className="text-xl font-semibold text-primary-300">Series</h3>
+        <Link href="/categories/series" className="group glass p-6 rounded-xl text-center hover:bg-slate-800/50 transition-all duration-300 hover:scale-105 border border-slate-700 hover:border-primary-500">
+          <div className="text-4xl mb-3">📺</div>
+          <h3 className="text-xl font-semibold text-primary-300 group-hover:text-primary-200">Series</h3>
         </Link>
-        <Link href="/categories/manga" className="glass p-6 rounded-lg text-center hover:bg-opacity-30 transition">
-          <h3 className="text-xl font-semibold text-primary-300">Manga</h3>
+        <Link href="/categories/manga" className="group glass p-6 rounded-xl text-center hover:bg-slate-800/50 transition-all duration-300 hover:scale-105 border border-slate-700 hover:border-primary-500">
+          <div className="text-4xl mb-3">📖</div>
+          <h3 className="text-xl font-semibold text-primary-300 group-hover:text-primary-200">Manga</h3>
         </Link>
-        <Link href="/categories/novels" className="glass p-6 rounded-lg text-center hover:bg-opacity-30 transition">
-          <h3 className="text-xl font-semibold text-primary-300">Novels</h3>
+        <Link href="/categories/novels" className="group glass p-6 rounded-xl text-center hover:bg-slate-800/50 transition-all duration-300 hover:scale-105 border border-slate-700 hover:border-primary-500">
+          <div className="text-4xl mb-3">📚</div>
+          <h3 className="text-xl font-semibold text-primary-300 group-hover:text-primary-200">Novels</h3>
         </Link>
       </section>
     </div>
