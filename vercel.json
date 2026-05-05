@@ -1,5 +1,6 @@
 {
   "version": 3,
+  "rootDirectory": ".",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "outputDirectory": ".next",
