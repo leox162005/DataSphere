@@ -22,13 +22,12 @@ export const authOptions: NextAuthOptions = {
           where: { email: credentials.email }
         })
 
-        if (!user) {
+        if (!user?.password) {
           return null
         }
 
-        // For demo, assume password is hashed. In real app, hash and compare.
-        // const isPasswordValid = await bcrypt.compare(credentials.password, user.password)
-        // if (!isPasswordValid) return null
+        const isPasswordValid = await bcrypt.compare(credentials.password, user.password)
+        if (!isPasswordValid) return null
 
         return {
           id: user.id,
@@ -60,5 +59,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/auth/signin',
+    newUser: '/auth/signup'
   }
 }

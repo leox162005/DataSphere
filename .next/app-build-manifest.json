@@ -1,93 +1,15 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/_not-found-352713f74bf9de0e.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/250-e3db70cd67721be2.js",
-      "static/css/c9d54f3f23b61861.css",
-      "static/chunks/app/layout-f99edf98a982b25a.js"
-    ],
-    "/anime/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/anime/page-002b340ce47bbf5f.js"
-    ],
-    "/admin/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/admin/page-cb47fef226136212.js"
-    ],
-    "/categories/[category]/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/352-8616dced9b792fd3.js",
-      "static/chunks/app/categories/[category]/page-78dd486aa27e635a.js"
-    ],
-    "/entries/[id]/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/352-8616dced9b792fd3.js",
-      "static/chunks/app/entries/[id]/page-bc86c9c435f49775.js"
-    ],
-    "/manga/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/manga/page-24c0e275770390a0.js"
-    ],
-    "/novels/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/novels/page-1bf4824cb0fb9e07.js"
-    ],
-    "/movies/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/movies/page-b16d05b94aa0640e.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/250-e3db70cd67721be2.js",
-      "static/chunks/app/page-16bc51d6c612326a.js"
-    ],
-    "/series/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/series/page-dddf622135ba78e4.js"
-    ],
-    "/users/[id]/page": [
-      "static/chunks/webpack-9fdf3650a47816dc.js",
-      "static/chunks/fd9d1056-516b58327fb05db5.js",
-      "static/chunks/938-f464a3b2301c5ba9.js",
-      "static/chunks/main-app-34d8ac21c07728a9.js",
-      "static/chunks/app/users/[id]/page-ae5d3700b95b92de.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ]
   }
 }

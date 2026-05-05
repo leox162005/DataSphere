@@ -15,8 +15,8 @@ export async function POST(request: NextRequest) {
       select: { roles: true }
     })
 
-    if (!user?.roles.includes('OWNER')) {
-      return NextResponse.json({ error: 'Only owners can manage roles' }, { status: 403 })
+    if (!user?.roles.includes('OWNER') && !user?.roles.includes('DATABASE_ADMIN')) {
+      return NextResponse.json({ error: 'Only owners or database admins can manage roles' }, { status: 403 })
     }
 
     const { userId, roles } = await request.json()

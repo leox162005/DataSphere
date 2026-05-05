@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
+import { User as UserIcon } from 'lucide-react'
 
 interface UserProfile {
   id: string
@@ -35,7 +36,9 @@ export default function UserProfilePage() {
   </div>
   if (!user) return <div className="container mx-auto p-8 flex items-center justify-center min-h-screen">
     <div className="text-center">
-      <div className="text-6xl mb-4">👤</div>
+      <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-slate-800 text-primary-300">
+        <UserIcon className="h-10 w-10" />
+      </div>
       <h2 className="text-2xl font-bold text-slate-300 mb-2">User not found</h2>
       <p className="text-slate-500">The user profile you&apos;re looking for doesn&apos;t exist.</p>
     </div>

@@ -22,11 +22,12 @@ A comprehensive database platform for anime, movies, series, manga, and novels, 
 
 1. Clone the repository
 2. Install dependencies: `npm install`
-3. Set up PostgreSQL database
+3. Set up PostgreSQL database (for Supabase, use your Supabase Postgres connection string)
 4. Update `.env.local` with your database URL and NextAuth secrets
 5. Run Prisma migrations: `npm run db:migrate`
 6. Generate Prisma client: `npm run db:generate`
-7. Start the development server: `npm run dev`
+7. Seed the main owner account: `npm run seed`
+8. Start the development server: `npm run dev`
 
 ## Scripts
 
@@ -80,6 +81,10 @@ A comprehensive database platform for anime, movies, series, manga, and novels, 
    - `NEXTAUTH_URL` (e.g. `https://your-site.vercel.app`)
 5. Vercel will run `npm install` and `npm run build` automatically.
 6. Deploy the project and open the live site.
+
+## Cloudflare Protection
+
+To protect the site with Cloudflare, point your domain to Cloudflare and enable the Web Application Firewall (WAF). This app also includes middleware-based protection for login and auth endpoints, including rate limiting for `/auth/signin`, `/auth/signup`, and `/api/auth/*` requests.
 
 For local preview and mobile testing, run `npm run dev` and use a tunnel service like localtunnel or ngrok if needed.
 

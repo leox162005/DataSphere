@@ -47,6 +47,7 @@ enum TrackingStatus {
 model User {
   id        String   @id @default(cuid())
   email     String   @unique
+  password  String?
   name      String?
   image     String?
   roles     Role[]
